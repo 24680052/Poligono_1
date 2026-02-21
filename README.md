@@ -1,13 +1,13 @@
-#Generador de poligono 2D en Blender
+# Generador de poligono 2D en Blender
 
-##Explicacion 
+## Explicacion 
 
 Este proyecto consiste en el desarrollo de un poligono 2D usando **Python** dentro de BLender mediante la API bpy.
 El script genera una malla personalizada calculando los vertices mediante trigonometria y conectandolos a traves de aristas para formar una figura cerrada. 
 
 ---
 
-#Objetivo del proyecto
+# Objetivo del proyecto
 
 - Comprender el uso de la API bpy en Blender.
 - Aplicar conversion de coordenadas polares a cartesianas.
@@ -16,9 +16,9 @@ El script genera una malla personalizada calculando los vertices mediante trigon
 
 ---
 
-#Explicacion tecnica del codigo
+# Explicacion tecnica del codigo
 
-##Importacion de modulos 
+## Importacion de modulos 
 
 Python
 
@@ -28,7 +28,7 @@ import math
 ·bpy: permite interactuar con BLender a nivel interno 
 ·math: se utiliza para realizar calculos matematicos como seno, coseno y pi
 
-#Creacion de la malla y objeto 
+# Creacion de la malla y objeto 
 
 `malla = bpy.data.meshes.new(nombre)
 objeto = bpy.data.objects.new(nombre, malla)
@@ -40,7 +40,7 @@ Aquí se:
 · Se crea un objeto que usa esa malla.
 · Se vincula el objeto a la colección activa de la escena.
 
-#Calculo de vertices
+# Calculo de vertices
 
 `for i in range(lados):
     angulo = 2 * math.pi * i / lados
@@ -55,7 +55,7 @@ Se realiza:
 · Conversión de coordenadas polares a cartesianas.
 · Se fija Z = 0 para mantener la figura en el plano 2D.
 
-#Creación de aristas
+# Creación de aristas
 
 `
 for i in range(lados):
@@ -64,7 +64,7 @@ for i in range(lados):
 Cada vértice se conecta con el siguiente.
 El operador módulo (%) permite que el último vértice se conecte nuevamente con el primero, cerrando la figura.
 
-#Carga de datos en la malla
+# Carga de datos en la malla
 
 `malla.from_pydata(vertices, aristas, [])
 malla.update()
@@ -74,14 +74,14 @@ Lista de vértices
 Lista de aristas
 Lista de caras (vacía en este caso)
 
-#Limpieza de la escena
+# Limpieza de la escena
 
 `bpy.ops.object.select_all(action='SELECT')
 bpy.ops.object.delete()
 `
 Se eliminan todos los objetos antes de crear el nuevo polígono para evitar superposición.
 
-#Llamada final
+# Llamada final. 
 
 `crear_poligono_2d("Poligono2D", lados=6, radio=5)
 `
