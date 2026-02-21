@@ -101,7 +101,7 @@ Se genera un hexágono con radio 5 unidades.
 
 ---
 
-#Parametros configurales
+# Parametros configurales
 En la ultima linea del codigo se puede modificar
 python
 
@@ -112,7 +112,7 @@ crear_poligono_2d("oligno", lados=6, radio=5)
 
 ---
 
-#Codigo completo 
+# Codigo completo 
 
 <img width="596" height="607" alt="image" src="https://github.com/user-attachments/assets/e7e28087-dd02-4f12-8dfd-6d54548d26d7" />
 
@@ -149,7 +149,7 @@ crear_poligono_2d("Poligono2D", lados=6, radio=5)
 ---
 
 
-##Resultado 
+## Resultado 
 
 <img width="506" height="621" alt="image" src="https://github.com/user-attachments/assets/c593e366-b7ec-49e2-8999-96307840e8e0" />
 
